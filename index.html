@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="WADD STORE — parfums, beauté, nutrition sportive et accessoires fitness au Sénégal.">
+<title>WADD STORE | Boutique en ligne</title>
+<style>
+:root{--black:#171717;--gold:#c5a15b;--cream:#f7f4ed;--line:#e8e1d4;--muted:#777}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--black)}a{text-decoration:none;color:inherit}
+.top{background:#171717;color:#f4dfad;text-align:center;padding:9px;font-size:11px;letter-spacing:.12em}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+nav{max-width:1180px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font: bold 28px Georgia,serif;letter-spacing:.12em}.logo span{color:var(--gold)}
+.links{display:flex;gap:24px;font-size:13px}.cart{background:#171717;color:white;border:0;padding:12px 16px;cursor:pointer}
+.hero{min-height:410px;color:white;background:linear-gradient(90deg,#101010e8,#10101035),url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center}
+.hero>div{max-width:1180px;width:100%;margin:auto;padding:55px 22px}.kicker{font-size:11px;letter-spacing:.22em;color:#e4c77f;font-weight:bold}
+h1{font:clamp(40px,6vw,68px)/1.05 Georgia,serif;margin:16px 0;max-width:650px}.hero p{max-width:500px;line-height:1.7;color:#eee}
+.goldbtn{display:inline-block;background:var(--gold);color:#171717;padding:13px 18px;margin-top:12px;font-weight:bold;font-size:12px}
+.trust{max-width:1180px;margin:auto;padding:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.trust div{background:var(--cream);padding:17px;text-align:center;font-size:13px}.trust b{display:block;margin-bottom:5px}
+section{max-width:1180px;margin:auto;padding:48px 20px}h2{font:32px Georgia,serif;margin:8px 0}.muted{color:var(--muted);font-size:13px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.filters button{border:1px solid var(--line);background:white;border-radius:24px;padding:9px 13px;font-size:12px;cursor:pointer}.filters button.active{background:#171717;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.item{border:1px solid var(--line);display:flex;flex-direction:column}.item img{width:100%;height:190px;object-fit:cover;background:var(--cream)}.info{padding:13px;display:flex;flex-direction:column;flex:1}.cat{font-size:10px;color:#98783a;letter-spacing:.12em;text-transform:uppercase}.item h3{font:18px Georgia,serif;margin:8px 0}.desc{font-size:12px;color:var(--muted);line-height:1.45;min-height:35px}.price{font-weight:bold;margin:12px 0}.add{margin-top:auto;background:#171717;color:white;border:0;padding:11px;cursor:pointer;font-size:12px}
+.disclaimer{margin-top:25px;background:var(--cream);padding:16px;color:#625a4b;font-size:12px;line-height:1.6}
+.about{background:#171717;color:white;max-width:none}.about>div{max-width:1180px;margin:auto;padding:42px 20px;display:grid;grid-template-columns:1.2fr 1fr;gap:35px;align-items:center}.about p{line-height:1.8;color:#ddd;font-size:14px}.mark{border:1px solid #8b7447;padding:32px;text-align:center;color:#e4c77f;font:32px Georgia,serif;letter-spacing:.14em}
+footer{background:#101010;color:#ccc;padding:25px 20px;font-size:12px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.shade{display:none;position:fixed;inset:0;background:#0008;z-index:10}.shade.show{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:white;padding:20px;overflow:auto}.drawerhead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.drawerhead button{border:0;background:none;font-size:27px;cursor:pointer}.lineitem{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;font-size:13px}.qty button{background:white;border:1px solid var(--line);padding:4px 9px;cursor:pointer}.total{display:flex;justify-content:space-between;padding:18px 0;font-weight:bold}.checkout{width:100%;background:#16884f;color:white;border:0;padding:14px;font-weight:bold;cursor:pointer}.empty{padding:25px 0;color:#777;text-align:center;font-size:13px}.small{font-size:11px;color:#777;line-height:1.5}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.links{display:none}.about>div{grid-template-columns:1fr}}
+@media(max-width:480px){.trust{grid-template-columns:1fr}.grid{gap:9px}.item img{height:145px}.info{padding:9px}.item h3{font-size:16px}section{padding:35px 14px}.hero>div{padding:42px 18px}}
+</style></head>
+<body>
+<div class="top">WADD STORE · BEAUTÉ · PARFUM · FITNESS · BIEN-ÊTRE</div>
+<header><nav><a class="logo" href="#"><img src="assets/logo-wadd.png" alt="Logo WADD STORE" style="width:48px;height:48px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:8px">WADD<span> STORE</span></a><div class="links"><a href="#shop">Boutique</a><a href="#about">À propos</a><a href="#contact">Contact</a></div><button class="cart" onclick="openCart()">PANIER (<span id="count">0</span>)</button></nav></header>
+<div class="hero"><div><div class="kicker">BIENVENUE CHEZ WADD STORE</div><h1>Révèle ton style.<br>Développe ta force.</h1><p>Découvre notre sélection de parfums, soins, nutrition sportive et accessoires de musculation. Tout ce qu'il te faut au même endroit.</p><a class="goldbtn" href="#shop">DÉCOUVRIR LA BOUTIQUE</a></div></div>
+<div class="trust"><div><b>✦ Sélection variée</b>Beauté, parfum & fitness</div><div><b>✦ Panier pratique</b>Ajoute plusieurs articles</div><div><b>✦ Commande WhatsApp</b>Confirmation directe avec la boutique</div></div>
+<section id="shop"><div class="kicker">NOTRE SÉLECTION</div><h2>La boutique WADD</h2><p class="muted">Les prix sont provisoires et exprimés en FCFA. Ils sont modifiables avant le lancement.</p><div class="filters" id="filters"></div><div class="grid" id="products"></div>
+<div class="disclaimer"><b>Prix de démonstration :</b> tous les prix et produits ci-dessous sont indicatifs, non contractuels. Remplace-les par tes références, photos et tarifs réels avant publication. Pour les compléments alimentaires, vérifie l'origine, l'étiquetage et la conformité des produits avant commercialisation.</div></section>
+<section class="about" id="about"><div><div><div class="kicker">L'UNIVERS WADD</div><h2>Prends soin de toi.<br>À ta façon.</h2><p>WADD STORE rassemble des essentiels pour ton quotidien : fragrances, produits de beauté, soins capillaires, nutrition sportive et accessoires d'entraînement. Une boutique pensée pour rendre tes achats simples et pratiques.</p></div><div class="mark">WADD STORE</div></div></section>
+<section id="contact"><div class="kicker">RESTONS EN CONTACT</div><h2>Une question ?</h2><p class="muted">Commande directement auprès de WADD STORE sur WhatsApp : <strong>77 693 90 45</strong>.</p><a class="goldbtn" href="https://wa.me/2217769390445" target="_blank">COMMANDER SUR WHATSAPP</a></section>
+<footer><div class="foot"><span>© 2026 WADD STORE — Tous droits réservés.</span><span>Sénégal · Prix en FCFA</span></div></footer>
+<a href="https://wa.me/2217769390445" target="_blank" style="position:fixed;right:16px;bottom:16px;background:#16884f;color:white;padding:13px 17px;border-radius:28px;z-index:8;font-weight:bold">WhatsApp · 77 693 90 45</a>
+<div class="shade" id="shade" onclick="if(event.target===this)closeCart()"><div class="drawer"><div class="drawerhead"><h2>Mon panier</h2><button onclick="closeCart()">×</button></div><div id="cartlines"></div><div class="total"><span>Total estimé</span><span id="sum">0 FCFA</span></div><button class="checkout" onclick="checkout()">COMMANDER SUR WHATSAPP</button><p class="small">Le prix et la disponibilité seront confirmés par WhatsApp. Le total ne comprend pas les frais de livraison.</p></div></div>
+<script>
+const WHATSAPP_NUMBER = "2217769390445"; // À remplacer par le numéro WhatsApp de la boutique, sans + ni espaces.
+const products=[
+{id:1,name:"Eau de parfum",cat:"Parfums",price:12000,desc:"Parfum élégant — format 100 ml",img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=80"},
+{id:2,name:"Brume parfumée",cat:"Parfums",price:5000,desc:"Brume parfumée pour le quotidien",img:"assets/masque-levres.jpeg"},
+{id:3,name:"Créatine monohydrate",cat:"Nutrition sportive",price:15000,desc:"Pot de créatine — quantité à préciser",img:"assets/creatine-gold.jpeg"},
+{id:4,name:"Whey protéine",cat:"Nutrition sportive",price:28000,desc:"Protéine en poudre — format à préciser",img:"https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=700&q=80"},
+{id:5,name:"Huile capillaire",cat:"Cheveux",price:4500,desc:"Soin nourrissant pour les cheveux",img:"assets/serum-levres.jpeg"},
+{id:6,name:"Soin visage",cat:"Cosmétiques",price:6500,desc:"Soin beauté — type à préciser",img:"assets/masques-visage.jpeg"},
+{id:7,name:"Multivitamines",cat:"Vitamines",price:8000,desc:"Complément alimentaire — format à préciser",img:"assets/masque-collagene.jpeg"},
+{id:8,name:"Gants de musculation",cat:"Accessoires fitness",price:6000,desc:"Gants pour l'entraînement",img:"assets/crochets-musculation.jpeg"},
+{id:9,name:"Genouillères",cat:"Accessoires fitness",price:9000,desc:"Maintien pendant les séances",img:"assets/manchon-coude.jpeg"},
+{id:10,name:"Sangles de tirage",cat:"Accessoires fitness",price:3500,desc:"Accessoire pour les exercices de traction",img:"https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&q=80"}
+];
+let cart={};let active="Tout";
+const money=n=>new Intl.NumberFormat("fr-FR").format(n)+" FCFA";
+function categories(){let cats=["Tout",...new Set(products.map(p=>p.cat))];document.getElementById("filters").innerHTML=cats.map(c=>`<button class="${active===c?'active':''}" onclick="setCategory('${c.replace(/'/g,"\\'")}')">${c}</button>`).join("")}
+function setCategory(c){active=c;render()}
+function render(){categories();document.getElementById("products").innerHTML=products.filter(p=>active==="Tout"||p.cat===active).map(p=>`<article class="item"><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="info"><div class="cat">${p.cat}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${money(p.price)}</div><button class="add" onclick="add(${p.id})">AJOUTER AU PANIER</button></div></article>`).join("");updateCart()}
+function add(id){cart[id]=(cart[id]||0)+1;updateCart()}
+function change(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCart()}
+function updateCart(){let count=Object.values(cart).reduce((a,b)=>a+b,0),total=0;document.getElementById("count").textContent=count;let lines=Object.entries(cart).map(([id,q])=>{let p=products.find(x=>x.id==id);total+=p.price*q;return `<div class="lineitem"><div><b>${p.name}</b><br>${money(p.price)} × ${q}<div class="qty"><button onclick="change(${id},-1)">−</button><button onclick="change(${id},1)">+</button></div></div><b>${money(p.price*q)}</b></div>`}).join("");document.getElementById("cartlines").innerHTML=lines||'<div class="empty">Ton panier est vide.</div>';document.getElementById("sum").textContent=money(total)}
+function openCart(){document.getElementById("shade").classList.add("show")}function closeCart(){document.getElementById("shade").classList.remove("show")}
+function checkout(){if(!Object.keys(cart).length){alert("Ton panier est vide.");return}if(WHATSAPP_NUMBER.includes("X")){alert("La boutique doit encore renseigner son numéro WhatsApp dans le fichier du site.");return}let total=0,rows=Object.entries(cart).map(([id,q])=>{let p=products.find(x=>x.id==id);total+=p.price*q;return `• ${p.name} x${q} : ${money(p.price*q)}`});let msg="Bonjour WADD STORE, je souhaite commander :%0A"+encodeURIComponent(rows.join("\n"))+"%0A%0ATotal estimé : "+encodeURIComponent(money(total))+"%0AÀ confirmer : disponibilité, livraison et frais.";window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+msg,"_blank")}
+render();
+</script></body></html>
